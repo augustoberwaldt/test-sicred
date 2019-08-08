@@ -1,0 +1,16 @@
+   SSSSSSSSSSSSSSS IIIIIIIIII      CCCCCCCCCCCCCRRRRRRRRRRRRRRRRR   EEEEEEEEEEEEEEEEEEEEEEDDDDDDDDDDDDD      IIIIIIIIII
+ SS:::::::::::::::SI::::::::I   CCC::::::::::::CR::::::::::::::::R  E::::::::::::::::::::ED::::::::::::DDD   I::::::::I
+S:::::SSSSSS::::::SI::::::::I CC:::::::::::::::CR::::::RRRRRR:::::R E::::::::::::::::::::ED:::::::::::::::DD I::::::::I
+S:::::S     SSSSSSSII::::::IIC:::::CCCCCCCC::::CRR:::::R     R:::::REE::::::EEEEEEEEE::::EDDD:::::DDDDD:::::DII::::::II
+S:::::S              I::::I C:::::C       CCCCCC  R::::R     R:::::R  E:::::E       EEEEEE  D:::::D    D:::::D I::::I  
+S:::::S              I::::IC:::::C                R::::R     R:::::R  E:::::E               D:::::D     D:::::DI::::I  
+ S::::SSSS           I::::IC:::::C                R::::RRRRRR:::::R   E::::::EEEEEEEEEE     D:::::D     D:::::DI::::I  
+  SS::::::SSSSS      I::::IC:::::C                R:::::::::::::RR    E:::::::::::::::E     D:::::D     D:::::DI::::I  
+    SSS::::::::SS    I::::IC:::::C                R::::RRRRRR:::::R   E:::::::::::::::E     D:::::D     D:::::DI::::I  
+       SSSSSS::::S   I::::IC:::::C                R::::R     R:::::R  E::::::EEEEEEEEEE     D:::::D     D:::::DI::::I  
+            S:::::S  I::::IC:::::C                R::::R     R:::::R  E:::::E               D:::::D     D:::::DI::::I  
+            S:::::S  I::::I C:::::C       CCCCCC  R::::R     R:::::R  E:::::E       EEEEEE  D:::::D    D:::::D I::::I  
+SSSSSSS     S:::::SII::::::IIC:::::CCCCCCCC::::CRR:::::R     R:::::REE::::::EEEEEEEE:::::EDDD:::::DDDDD:::::DII::::::II
+S::::::SSSSSS:::::SI::::::::I CC:::::::::::::::CR::::::R     R:::::RE::::::::::::::::::::ED:::::::::::::::DD I::::::::I
+S:::::::::::::::SS I::::::::I   CCC::::::::::::CR::::::R     R:::::RE::::::::::::::::::::ED::::::::::::DDD   I::::::::I
+ SSSSSSSSSSSSSSS   IIIIIIIIII      CCCCCCCCCCCCCRRRRRRRR     RRRRRRREEEEEEEEEEEEEEEEEEEEEEDDDDDDDDDDDDD      IIIIIIIII
