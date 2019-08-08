@@ -1,0 +1,15 @@
+language: java
+dist: xenial
+sudo: required
+
+jdk:
+- openjdk11
+install:
+- mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+- mvn test-compile -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+script:
+- mvn -Psoftdesign clean compile
+after_success:
+- mvn coveralls:report
+
+group: stable
