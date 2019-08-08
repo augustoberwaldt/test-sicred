@@ -8,7 +8,7 @@ install:
 - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 - mvn test-compile -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 script:
-- mvn -Psoftdesign clean compile
+- mvn -Psicredi clean compile
 after_success:
 - mvn coveralls:report
 
