@@ -1,5 +1,8 @@
 package com.sicredi.app.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sicredi.app.config.QueueSender;
 import com.sicredi.app.entity.Schedule;
 import com.sicredi.app.repository.ScheduleRepository;
 import org.springframework.stereotype.Service;
@@ -15,8 +18,11 @@ public class ScheduleService {
 
     private final ScheduleRepository scheduleRepository;
 
-    public ScheduleService(ScheduleRepository scheduleRepository) {
+    private  final QueueSender queueSender;
+
+    public ScheduleService(ScheduleRepository scheduleRepository, QueueSender queueSender) {
         this.scheduleRepository = scheduleRepository;
+        this.queueSender =  queueSender;
     }
 
 
@@ -111,11 +117,36 @@ public class ScheduleService {
     }
 
     /**
-     * Update pauta na base
+     * Update pauta na base, adiciona na fila  quando adicionar datafinish
      *
      * @param schedule
      */
     public void update(Schedule schedule) {
+
+        if (schedule.getDtFinish() !=  null) {
+            String send = this.mapToJson(schedule);
+            if (!send.isEmpty()) {
+                this.queueSender.send(this.mapToJson(schedule));
+            }
+        }
+
         this.save(schedule);
+
+    }
+
+    /**
+     * Converte u objeto em json literal (string)
+     *
+     *
+     * @param obj
+     * @return
+     */
+    public String mapToJson(Object obj)  {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            return objectMapper.writeValueAsString(obj);
+        } catch (JsonProcessingException e) {
+            return "";
+        }
     }
 }

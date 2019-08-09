@@ -16,6 +16,20 @@ spring:
     username: sa
     password:
 
+  rabbitmq:
+    host: localhost
+    port: 5672
+    # heroku
+    # port: 1883
+    username: rabbitmq
+    # heroku
+    #username: gzxxrqrz:gzxxrqrz
+    #password: 	AFEa2r4yYLTu3liQJJlRrzZ2lnmj5cjQ
+    password: rabbitmq
+
+queue:
+  schedule:
+    name: scheduleQueue
 
 logging:
   file: data/logger.log
