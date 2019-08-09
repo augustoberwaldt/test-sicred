@@ -15,7 +15,7 @@ seria so  subir um docker de outro banco e alterar application.yml.
 
 ##### Link da aplicação no Heroku
 
-https://softdesignbrasil.herokuapp.com/swagger-ui.html
+https://test-sicredi.herokuapp.com/swagger-ui.html
 
 
 ###### Interface para acessar Banco H2
