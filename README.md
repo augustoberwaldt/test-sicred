@@ -28,6 +28,10 @@ na  raiz esta docker composer para subir o rabbitmq, que e um mesange broker, as
 
 localhost:8080/swagger-ui.html
 
+###### Desenvolvimento
+
+Para desenvolver utilizei IDE IntellJ
+
 ##### Tecnologias Utilizadas
 - Linguagem de Programação Java
 - Spring Boot
