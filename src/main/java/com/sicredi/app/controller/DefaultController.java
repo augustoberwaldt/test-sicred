@@ -12,9 +12,8 @@ import java.util.Map;
 @RestController
 public class DefaultController {
 
-    @RequestMapping("/ping")
+    @GetMapping("/ping")
     public ResponseEntity<String> ping() {
-
         return  ResponseEntity.ok("pong");
     }
 

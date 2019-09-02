@@ -112,8 +112,8 @@ public class ScheduleService {
     private  Date addMinutesToDate(Long  minutes, Date beforeTime) {
 
         long curTimeInMs = beforeTime.getTime();
-        Date afterAddingMins = new Date(curTimeInMs + minutes);
-        return afterAddingMins;
+        long time = curTimeInMs + minutes;
+        return new Date(time);
     }
 
     /**

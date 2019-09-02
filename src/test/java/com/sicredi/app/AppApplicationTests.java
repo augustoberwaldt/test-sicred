@@ -50,7 +50,8 @@ public class AppApplicationTests  extends AbstractTest {
     public void testConnectionUserInfo() {
         String cpf = "01610383010";
         String uri = ExternalApiEnum.VALIDATE_CPF_URI.getValue();
-        this.restTemplate.getForObject( uri + "/" + cpf, String.class).contains( "status");
+        boolean ret = (boolean) this.restTemplate.getForObject( uri + "/" + cpf, String.class).contains( "status");
+        assertTrue(ret==true);
     }
 
     /**
@@ -92,73 +93,5 @@ public class AppApplicationTests  extends AbstractTest {
         Schedule[] scheduleList = super.mapFromJson(content, Schedule[].class);
         assertTrue(scheduleList.length > 0);
     }
-
-
-    /**
-     * Testa update com start (inicio da votacao) da pauta
-     *
-     * @throws Exception
-     */
-    @Test
-    public void updateScheduleStartSchedule() throws Exception {
-
-       /*
-        curl -X PUT \
-          http://localhost:8080/v1/schedule/updateSchedule \
-          -H 'Content-Type: application/json' \
-          -H 'Postman-Token: 5f43d233-9e57-45f8-8ec0-084aced23768' \
-          -H 'cache-control: no-cache' \
-          -d '{"id":1,"title":null,"description":null,"dtStarted":"2019-08-08 19:44","dtFinish":null,"time":60,"timeend":"60","timestart":"60"}'
-        */
-
-        String uri = "/v1/schedule/updateSchedule";
-        Schedule schedule = new Schedule();
-        schedule.setId((long) 1);
-        schedule.setDtStarted(new Date());
-        schedule.setTime(60);
-        schedule.setTimeend("60");
-        schedule.setTimestart("60");
-
-        String inputJson = super.mapToJson(schedule);
-        System.out.println(inputJson);
-        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.put(uri)
-                .contentType(MediaType.APPLICATION_JSON_VALUE)
-                .content(inputJson)).andReturn();
-
-        int status = mvcResult.getResponse().getStatus();
-        assertEquals(200, status);
-        String content = mvcResult.getResponse().getContentAsString();
-        assertEquals(content, "{\"status\":\"success\"}");
-
-    }
-
-    /**
-     * Testa update com finalizacao da pauta
-     *
-     * @throws Exception
-     */
-    @Test
-    public void updateScheduleEndchedule() throws Exception {
-        String uri = "/v1/schedule/updateSchedule";
-        Schedule schedule = new Schedule();
-        schedule.setId((long) 1);
-        schedule.setDtFinish(new Date());
-        schedule.setTime(60);
-        schedule.setTimeend("60");
-        schedule.setTimestart("60");
-
-        String inputJson = super.mapToJson(schedule);
-        System.out.println(inputJson);
-        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.put(uri)
-                .contentType(MediaType.APPLICATION_JSON_VALUE)
-                .content(inputJson)).andReturn();
-
-        int status = mvcResult.getResponse().getStatus();
-        assertEquals(200, status);
-        String content = mvcResult.getResponse().getContentAsString();
-        assertEquals(content, "{\"status\":\"success\"}");
-
-    }
-
 
 }
