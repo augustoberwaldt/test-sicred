@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sicredi.app.config.QueueSender;
 import com.sicredi.app.entity.Schedule;
 import com.sicredi.app.repository.ScheduleRepository;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -35,6 +36,7 @@ public class ScheduleService {
         this.scheduleRepository.save(schedule);
     }
 
+    @Cacheable("schedule")
     public List<Schedule> getAll()   {
         return this.scheduleRepository.findAll();
     }
